@@ -12,13 +12,21 @@ class Advent
     f.close
   end
 
-  def checksum
-    @sheet.map { |x| x.max - x.min }.reduce(0, :+)
+  def checksum_one
+    @sheet.map{|x| x.max - x.min}.reduce(:+)
+  end
+
+  def checksum_two
+    @sheet.map do |x| 
+      x.permutation(2).find do |a,b| 
+        a%b == 0
+      end.reduce(:/)
+    end.reduce(:+)
   end
 end
 
-
 if __FILE__ == $0
   a = Advent.new(ARGV[0])
-  puts a.checksum
+  puts a.checksum_one
+  puts a.checksum_two
 end
