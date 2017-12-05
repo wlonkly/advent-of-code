@@ -15,14 +15,9 @@ class Advent
   end
 
   def self.midpoints(input)
-    midpoints = []
     s = side_length(input)
-
-    (0..3).each do |i|  
-      # corner - distance to axis - distance to next axis      
-      midpoints << s**2 - (s/2).floor - ((s-1)*i) 
-    end
-    midpoints.reverse  # easier to write the test cases :)
+    #           corner - distance to axis - distance to next axis
+    (0..3).map{ |i| s**2 - (s/2).floor - ((s-1)*i) }.reverse # reverse makes test cases easier to read
   end
 
   def self.distance_to_axis(input)
@@ -37,7 +32,6 @@ class Advent
     distance_to_axis(input) + ring(input) 
   end
 end
-
 
 if __FILE__ == $0
   puts Advent.distance(ARGV[0].to_i)
