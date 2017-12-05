@@ -1,19 +1,32 @@
 require_relative "./04.rb"
 
 describe Advent do
-  context "part 1" do
-    describe "#valid?" do
-      inputs = [
-        "aa bb cc aa",
-        "aa bb cc dd ee",
-        "aa bb cc dd aaa"
-      ]
-      outputs = [false, true, true]
+  describe "#part1_valid?" do
+    cases = {
+      "aa bb cc aa" => false,
+      "aa bb cc dd ee" => true,
+      "aa bb cc dd aaa" => true,
+    }
 
-      inputs.each_with_index do |n, i|
-        it "determines the validity of password #{n} as #{outputs[i]}" do
-          expect(Advent.valid?(n)).to eql(outputs[i])
-        end
+    cases.each do |input, output|
+      it "applies part1_valid? to #{input}" do
+        expect(Advent.part1_valid?(input)).to eql(output)
+      end
+    end
+  end
+
+  describe "#part2_valid?" do
+    cases = {
+      "abcde fghij" => true,
+      "abcde xyz ecdab" => false,
+      "a ab abc abd abf abj" => true,
+      "iiii oiii ooii oooi oooo" => true,
+      "oiii ioii iioi iiio" => false
+    }
+
+    cases.each do |input, output|
+      it "applies part2_valid? to #{input}" do
+        expect(Advent.part2_valid?(input)).to eql(output)
       end
     end
   end
