@@ -30,11 +30,11 @@ class Advent
   end
 
   def self.ring(input)
-    (Math.sqrt(input).ceil / 2) + 1
+    (Math.sqrt(input).ceil / 2) 
   end
 
   def self.distance(input)
-    distance_to_axis(input) + ring(input) - 1
+    distance_to_axis(input) + ring(input) 
   end
 end
 
