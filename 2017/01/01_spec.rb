@@ -1,7 +1,7 @@
 require_relative "./01.rb"
 
 describe Advent do
-  describe ".sum_neighbours" do
+  describe "#sum_neighbours" do
     context "when provided 1111" do
       it "returns 4" do
       end
@@ -26,7 +26,7 @@ describe Advent do
     end
   end
 
-  describe ".sum_halfway" do
+  describe "#sum_halfway" do
     context "when provided 1212" do
       it "returns 6" do
         expect(Advent.new("1212").sum_halfway).to eql(6)

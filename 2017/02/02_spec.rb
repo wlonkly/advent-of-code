@@ -6,7 +6,7 @@ describe Advent do
       @a = Advent.new("02-test.txt")
     end
 
-    describe ".new" do
+    describe "#new" do
       it "generates a two-dimensional array" do
         expect(@a.sheet).to match_array([
           [5, 1, 9, 5],
@@ -16,7 +16,7 @@ describe Advent do
       end
     end
 
-    describe ".checksum_one" do
+    describe "#checksum_one" do
       it "returns 18" do
         expect(@a.checksum_one).to eql(18)
       end
@@ -28,7 +28,7 @@ describe Advent do
       @b = Advent.new("02-test2.txt")
     end
 
-    describe ".checksum_two" do
+    describe "#checksum_two" do
       it "returns 9" do
         expect(@b.checksum_two).to eql(9)
       end

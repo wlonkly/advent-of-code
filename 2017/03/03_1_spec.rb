@@ -10,7 +10,7 @@ require_relative "./03.rb"
 
 describe Advent do
   context "part 1" do
-    describe "#side_length" do
+    describe ".side_length" do
       inputs  = [1, 2, 11, 25]
       outputs = [1, 3, 5, 5]
 
@@ -21,7 +21,7 @@ describe Advent do
       end
     end
 
-    describe "#midpoints" do
+    describe ".midpoints" do
       inputs  = [1, 3, 14, 25]
       outputs = [[1,1,1,1], [2,4,6,8], [11,15,19,23], [11,15,19,23]]
 
@@ -32,7 +32,7 @@ describe Advent do
       end
     end
 
-    describe "#distance_to_axis" do
+    describe ".distance_to_axis" do
       inputs  = [1, 8, 14, 25]
       outputs = [0, 0, 1, 2]
 
@@ -43,7 +43,7 @@ describe Advent do
       end
     end
 
-    describe "#ring" do
+    describe ".ring" do
       inputs  = [1, 2, 23, 25]
       outputs = [1, 2, 3, 3]
 

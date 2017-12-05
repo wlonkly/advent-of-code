@@ -1,7 +1,7 @@
 require_relative "./04.rb"
 
 describe Advent do
-  describe "#part1_valid?" do
+  describe ".part1_valid?" do
     cases = {
       "aa bb cc aa" => false,
       "aa bb cc dd ee" => true,
@@ -15,7 +15,7 @@ describe Advent do
     end
   end
 
-  describe "#part2_valid?" do
+  describe ".part2_valid?" do
     cases = {
       "abcde fghij" => true,
       "abcde xyz ecdab" => false,
