@@ -1,21 +1,11 @@
 class Advent
   def self.part1_valid?(password)
-    words = {}
-    password.split.each do |word|
-      return false if words.has_key?(word)
-      words[word] = true
-    end 
-    true
+    return password.split == password.split.uniq
   end
 
   def self.part2_valid?(password)
-    words = {}
-    password.split.each do |word|
-      sorted_word = word.chars.sort.join
-      return false if words.has_key?(sorted_word)
-      words[sorted_word] = true
-    end
-    true
+    sorted_pass = password.split.map{|x| x.chars.sort.join}
+    return sorted_pass == sorted_pass.uniq
   end
 end
 
